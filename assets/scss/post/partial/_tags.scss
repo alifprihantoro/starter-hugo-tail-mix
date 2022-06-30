@@ -1,0 +1,9 @@
+.my-tags {
+  @apply flex flex-wrap leading-[50px] ml-3;
+  a {
+    @apply p-3 rounded-xl bg-blue-900 mr-2;
+  }
+  li:hover {
+    @apply translate-x-4 duration-75;
+  }
+}

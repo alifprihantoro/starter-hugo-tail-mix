@@ -1,0 +1,22 @@
+<div class="list-pages">
+<h1 class=" text-center font-bold font-sans text-blue-900 text-4xl p-5 " alt="My Projek">{{ .Title }}</h1>
+<p class=" m-3 p-5 bg-blue-900 w-fit m-auto rounded-md  ">
+Terdapat "{{ len .RegularPages }}" Postingan dari {{ .Title }} yang bisa kalian baca dan komentari.
+</p>
+</div>
+    <div class="myread">
+	{{ range .Paginator.Pages }}
+	      <a href="{{ .RelPermalink }}">
+      <div class="content">
+        <div class="date">
+									<span class="day">{{ dateFormat "02" .Date }}</span>
+							<span class="rest">{{ if $.Site.Data.month }}{{ index $.Site.Data.month (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{ dateFormat "Jan 2006" .Date }}{{ end }}</span>
+								</div>
+        <div class="readMore">
+            {{ .Title }}
+        </div>
+     </div>
+            </a>
+      {{ end }}
+    </div>
+{{ partial "post/pagenation.html" . }}

@@ -1,0 +1,7 @@
+<!-- follow -->
+<h3 class="title-side"><span> Follow </span></h3>
+<div class="btn-long">
+  {{ range .Site.Menus.sosmed2.Sort.ByWeight }}
+  <a target="_blank" href="https://{{.URL}}" class="{{ .Identifier }}"></a>
+  {{end}}
+</div>

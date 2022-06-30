@@ -1,0 +1,29 @@
+<div class="nav-post">
+  <div>
+    {{ if .NextInSection }}
+      <a class="hover:-translate-x-3"
+       href="{{ .NextInSection.Permalink }}?ref=footer"
+        >« Sebelumnya</a
+      >
+      <br>
+    <a
+      href="{{ .NextInSection.Permalink }}?ref=footer"
+      >{{ .NextInSection.Title | truncate 50 "..."}}</a
+    >
+    {{ end }}
+  </div>
+  <div class="text-right">
+    {{ if .PrevInSection }}
+      <a class="hover:translate-x-3"
+        href="{{ .PrevInSection.Permalink }}?ref=footer"
+        alt="selanjutnya"
+        >selanjutnya »</a
+      >
+      <br>
+    <a
+      href="{{ .PrevInSection.Permalink }}?ref=footer"
+      >{{ .PrevInSection.Title | truncate 50 "..." }}</a
+    >
+    {{ end }}
+  </div>
+</div>

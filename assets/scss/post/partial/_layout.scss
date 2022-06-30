@@ -1,0 +1,9 @@
+// layout list
+.layout-post {
+  @apply mx-auto block;
+}
+@screen md{
+  .layout-post {
+    display :flex;
+  }
+}

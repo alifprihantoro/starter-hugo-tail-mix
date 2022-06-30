@@ -1,0 +1,29 @@
+<div class="window hidden btn-sosmed" id='contact'>
+  <div class="bar" id='contactheader'>
+    <h2>contact</h2>
+    <button onclick="closeWindow()" class="window-btn iclose"></button>
+  </div>
+
+    {{ range .Site.Menus.contact.Sort.ByWeight }}
+      <a target="_blank" href="{{.URL}}"
+      class="{{ .Identifier }} p-3 m-2 border border-1 rounded-xl flex
+      content-center items-center hover:bg-blue-900"
+      >
+        <span class="w-[90%]">
+          {{ .Name }}
+        </span>
+      </a>
+    {{end}}
+    <br>
+      <h3 class="title-side"><span> about </span></h3>
+
+  <div class="flex w-fit m-auto">
+    {{ range .Site.Menus.sosmed2.Sort.ByWeight }}
+    <a target="_blank"
+      href="https://{{.URL}}"
+      class="{{ .Identifier }} p-3 m-2 border border-1 rounded-xl flex
+      content-center items-center hover:bg-blue-900 hover:-translate-y-2"
+    ></a>
+    {{end}}
+  </div>
+</div>

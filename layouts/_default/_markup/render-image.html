@@ -1,0 +1,17 @@
+  <!-- image outsource -->
+<img
+  {{ if strings.HasPrefix .Destination "http" }} 
+    onclick="imagePopup(this.getAttribute('data-src'))" 
+    data-src="{{ .Destination | safeURL }}" 
+    src="{{ .Destination | safeURL }}"
+  {{ else }}
+    {{ $imagePath := printf "img/%s.png" .Destination | safeURL }}
+    {{- $image := resources.Get $imagePath -}}
+    onclick="imagePopup(this.getAttribute('data-src'))" 
+    data-src="{{ (resources.Get $imagePath).RelPermalink }}" 
+    src="{{ ($image.Fill "200x200 Center").RelPermalink }}"
+  {{ end }}
+  class="lazy"
+  alt="{{ .Text }}"
+  loading="lazy"
+  {{ with .Title}} title="{{ . }}"{{ end }}/>

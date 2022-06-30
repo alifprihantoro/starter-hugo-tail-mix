@@ -1,0 +1,6 @@
+<h3 class="title-side"><span> Kategori : </span></h3>
+<ul class="btn-long">
+  {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+    <li><a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a></li>
+  {{ end }}
+</ul>

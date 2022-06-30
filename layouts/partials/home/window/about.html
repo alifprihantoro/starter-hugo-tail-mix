@@ -1,0 +1,19 @@
+<div id="image-popup"></div>
+<div class="window hidden" id='about'>
+  <div class="bar" id='aboutheader'>
+    <h2>About</h2>
+    <button onclick="closeWindow()" class="window-btn iclose"></button>
+  </div>
+  {{ partial "main/about.html" . }}
+  <br>
+  <h3 class="title-side"><span> Follow </span></h3>
+  <div class="w-fit m-auto flex p-5 btn-sosmed">
+    {{ range .Site.Menus.sosmed.Sort.ByWeight }}
+    <a target="_blank"
+      href="https://{{.URL}}"
+      class="{{ .Identifier }} p-3 m-2 border border-1 rounded-xl
+      flex content-center items-center hover:bg-blue-900"
+    ></a>
+    {{end}}
+  </div>
+</div>

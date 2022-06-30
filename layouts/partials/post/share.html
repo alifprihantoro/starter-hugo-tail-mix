@@ -1,0 +1,28 @@
+<h3 class="title-side"><span> Share on : </span></h3>
+{{ if not .IsHome }} {{ $pageurl := .Permalink }}
+<div class="btn-long">
+  <a
+    class="fb"
+    title="Share this on Facebook"
+    onclick="window.open('http://www.facebook.com/share.php?u={{ $pageurl }}');"
+  >
+  </a>
+  <a
+    class="tw"
+    title="Share this on Twitter"
+    onclick="window.open('https://twitter.com/intent/tweet?text={{ $pageurl }}');"
+  >
+  </a>
+  <a
+    class="tlp"
+    href="whatsapp://send?text={{ $pageurl }}"
+    data-action="share/whatsapp/share"
+  ></a>
+  <a
+    class="gmail"
+    title="Share this through Email"
+    onclick="window.open('mailto:?&body={{ $pageurl }}');"
+  >
+  </a>
+</div>
+{{end}}

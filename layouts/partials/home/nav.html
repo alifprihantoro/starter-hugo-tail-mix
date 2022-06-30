@@ -1,0 +1,11 @@
+<nav class="nav ">
+  {{ range .Site.Menus.nav.Sort.ByWeight }}
+  <a
+    class="hover:-translate-y-2"
+    href="{{.URL}}"
+  >
+    <span class="{{ .Name }}"> </span>
+    {{.Identifier}}
+  </a>
+  {{end}}
+</nav>

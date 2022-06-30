@@ -1,0 +1,15 @@
+<!-- tags post -->
+{{ partial "post/single/tags.html" . }}
+<!-- related post -->
+{{ partial "post/single/related.html" . }}
+<!-- about post -->
+<div class="about-post">
+{{ partial "main/about.html" . }}
+</div>
+{{ partial "post/share.html" . }}
+<!-- next prev -->
+{{ partial "post/single/next-prev.html" . }}
+<!-- disqus -->
+{{ template "_internal/disqus.html" . }}
+<!-- main footer -->
+{{ partial "main/footer.html" . }}

@@ -1,0 +1,10 @@
+<h3 class="title-side"><span> contact </span></h3>
+<div class="btn-long">
+  {{ range .Site.Menus.contact.Sort.ByWeight }}
+  <a 
+    href="https://{{.URL}}" >
+    <span class="{{ .Identifier }}"></span>
+    {{ .Name }}
+  </a>
+  {{end}}
+</div>

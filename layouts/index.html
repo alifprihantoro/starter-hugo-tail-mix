@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="scroll-smooth selection:bg-blue-900 selection:text-white"
+>
+  <head itemscope itemtype="{{ .Site.BaseURL }}">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    {{ partial "main/head.html" . }}
+    <link rel="stylesheet" href="/home.css" />
+  </head>
+  <body id="" class="w-[916px] max-w-full m-auto bg-blue-900 bg-opacity-20">
+    <header>
+      <h1>
+        {{ partial "main/header.html" . }}
+      </h1>
+      {{ partial "main/search.html" . }}
+      {{ partial "home/nav.html" . }}
+    </header>
+    <!-- window -->
+    {{ partial "home/window/about.html" . }}
+    {{ partial "home/window/contact.html" . }}
+    {{ partial "home/window/project.html" . }}
+    {{ partial "home/list.html" . }} 
+    {{ partial "main/footer.html" . }}
+    {{ partial "main/js.html" . }}
+  </body>
+</html>
